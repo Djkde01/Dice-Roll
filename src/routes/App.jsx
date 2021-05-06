@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import InitialComponent from "@components/InitialComponent";
+import Dice from "@components/Dice";
 import "@styles/App.css";
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <InitialComponent />
+          <Dice />
         </Route>
       </Switch>
     </BrowserRouter>
