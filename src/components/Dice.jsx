@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 import "@styles/components/Dice.css";
+import Dot from "./Dot";
 
 function rollDice() {
   const dice = [...document.querySelectorAll(".die-list")];
@@ -21,7 +22,14 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const Dice = () => {
+const Dice = (props) => {
+  const { rowLimit = 6 } = props;
+  /*{Array.from({ length: rowLimit }, (_, k) => (
+    <tr key={k}>
+      <td>{k + 1}</td>
+    </tr>
+  ))}
+  */
   useEffect(() => {
     document.getElementById("roll-button").addEventListener("click", rollDice);
   }, []);
@@ -30,72 +38,72 @@ const Dice = () => {
       <div className="dice">
         <ol className="die-list even-roll" data-roll="1" id="die-1">
           <li className="die-item" data-side="1">
-            <span className="dot"></span>
+            <Dot />
           </li>
           <li className="die-item" data-side="2">
-            <span className="dot"></span>
-            <span className="dot"></span>
+            <Dot />
+            <Dot />
           </li>
           <li className="die-item" data-side="3">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
+            <Dot />
+            <Dot />
+            <Dot />
           </li>
           <li className="die-item" data-side="4">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
           </li>
           <li className="die-item" data-side="5">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
           </li>
           <li className="die-item" data-side="6">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
           </li>
         </ol>
         <ol className="die-list odd-roll" data-roll="1" id="die-2">
           <li className="die-item" data-side="1">
-            <span className="dot"></span>
+            <Dot />
           </li>
           <li className="die-item" data-side="2">
-            <span className="dot"></span>
-            <span className="dot"></span>
+            <Dot />
+            <Dot />
           </li>
           <li className="die-item" data-side="3">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
+            <Dot />
+            <Dot />
+            <Dot />
           </li>
           <li className="die-item" data-side="4">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
           </li>
           <li className="die-item" data-side="5">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
           </li>
           <li className="die-item" data-side="6">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
+            <Dot />
           </li>
         </ol>
       </div>
