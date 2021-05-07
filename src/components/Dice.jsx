@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import "@styles/components/Dice.css";
-import Dot from "./Dot";
+import DiceFace from "./DiceFace";
 
 function rollDice() {
   const dice = [...document.querySelectorAll(".die-list")];
@@ -22,14 +22,7 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const Dice = (props) => {
-  const { rowLimit = 6 } = props;
-  /*{Array.from({ length: rowLimit }, (_, k) => (
-    <tr key={k}>
-      <td>{k + 1}</td>
-    </tr>
-  ))}
-  */
+const Dice = () => {
   useEffect(() => {
     document.getElementById("roll-button").addEventListener("click", rollDice);
   }, []);
@@ -37,74 +30,14 @@ const Dice = (props) => {
     <div>
       <div className="dice">
         <ol className="die-list even-roll" data-roll="1" id="die-1">
-          <li className="die-item" data-side="1">
-            <Dot />
-          </li>
-          <li className="die-item" data-side="2">
-            <Dot />
-            <Dot />
-          </li>
-          <li className="die-item" data-side="3">
-            <Dot />
-            <Dot />
-            <Dot />
-          </li>
-          <li className="die-item" data-side="4">
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-          </li>
-          <li className="die-item" data-side="5">
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-          </li>
-          <li className="die-item" data-side="6">
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-          </li>
+          {[...Array(6)].map((value, index) => (
+            <DiceFace faceSide={index + 1} key={index} />
+          ))}
         </ol>
         <ol className="die-list odd-roll" data-roll="1" id="die-2">
-          <li className="die-item" data-side="1">
-            <Dot />
-          </li>
-          <li className="die-item" data-side="2">
-            <Dot />
-            <Dot />
-          </li>
-          <li className="die-item" data-side="3">
-            <Dot />
-            <Dot />
-            <Dot />
-          </li>
-          <li className="die-item" data-side="4">
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-          </li>
-          <li className="die-item" data-side="5">
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-          </li>
-          <li className="die-item" data-side="6">
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-            <Dot />
-          </li>
+          {[...Array(6)].map((value, index) => (
+            <DiceFace faceSide={index + 1} key={index} />
+          ))}
         </ol>
       </div>
       <button type="button" id="roll-button">
