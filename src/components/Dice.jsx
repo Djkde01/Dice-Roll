@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import "@styles/components/Dice.css";
 import DiceFace from "./DiceFace";
-import Button from "./Button";
+import NavBar from "./NavBar";
 
 function rollDice() {
   const dice = [...document.querySelectorAll(".die-list")];
@@ -41,8 +41,7 @@ const Dice = () => {
           ))}
         </ol>
       </div>
-      <Button id="roll-button">Roll Dice</Button>
-      <Button>Pointless button</Button>
+      <NavBar />
     </div>
   );
 };

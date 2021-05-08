@@ -1,0 +1,13 @@
+.NavBar {
+  width: 30%;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  margin: 2rem auto;
+}
+
+@media (max-width: 600px) {
+  .NavBar {
+    width: 50%;
+  }
+}
