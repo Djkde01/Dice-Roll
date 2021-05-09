@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 import "@styles/components/Dice.css";
 import DiceFace from "./DiceFace";
+import NavBar from "./NavBar";
 
 function rollDice() {
   const dice = [...document.querySelectorAll(".die-list")];
@@ -27,7 +28,16 @@ const Dice = () => {
     document.getElementById("roll-button").addEventListener("click", rollDice);
   }, []);
   return (
-    <div>
+    <main className="main-game">
+      <h1>
+        <span role="img" aria-label="dice">
+          🎲
+        </span>
+        {" Dices game "}
+        <span role="img" aria-label="dice">
+          🎲
+        </span>
+      </h1>
       <div className="dice">
         <ol className="die-list even-roll" data-roll="1" id="die-1">
           {[...Array(6)].map((value, index) => (
@@ -40,10 +50,8 @@ const Dice = () => {
           ))}
         </ol>
       </div>
-      <button type="button" id="roll-button">
-        Roll Dice
-      </button>
-    </div>
+      <NavBar />
+    </main>
   );
 };
 
