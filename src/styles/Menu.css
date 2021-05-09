@@ -1,0 +1,54 @@
+form {
+  width: 400px;
+  margin: 40px auto;
+  color: #333;
+  text-align: center;
+}
+form input {
+  width: 100%;
+  border: none;
+  background-color: #5993ff;
+}
+.submit-form {
+  border: none;
+  color: #333;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+}
+.submit-form:hover {
+  cursor: pointer;
+  background-color: #3067cc;
+}
+.slider-parent {
+  width: 350px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  text-align: start;
+}
+.bubble {
+  background-color: #5993ff;
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+.pointer {
+  height: 18px;
+  width: 18px;
+  background-color: #5993ff;
+  margin: 0 auto;
+  transform: rotate(45deg);
+  border-radius: 0 12px 0px 0;
+  margin-top: -23px;
+  position: relative;
+  left: -18px;
+}

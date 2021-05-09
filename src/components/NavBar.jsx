@@ -6,9 +6,13 @@ import "@styles/components/NavBar.css";
 const NavBar = () => {
   return (
     <div className="NavBar">
-      <Button id="roll-button">Roll Dice</Button>
-      <Button>Add/Remove Dices</Button>
-      <Button>Next Turn</Button>
+      <Button type="button" id="roll-button">
+        Roll Dice
+      </Button>
+      <Button type="button">Next Turn</Button>
+      <a href="/">
+        <Button type="button">Add/Remove Dices</Button>
+      </a>
     </div>
   );
 };

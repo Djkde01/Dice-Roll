@@ -2,9 +2,9 @@ import React from "react";
 
 import "@styles/components/Button.css";
 
-const Button = ({ children, id, ...props }) => {
+const Button = ({ children, id, type, ...props }) => {
   return (
-    <button type="button" id={id}>
+    <button type={type} id={id}>
       {children}
     </button>
   );
