@@ -24,9 +24,11 @@ function getRandomNumber(min, max) {
 }
 
 const Dice = () => {
+  const data = JSON.parse(window.localStorage.getItem("gameInfo"));
   useEffect(() => {
     document.getElementById("roll-button").addEventListener("click", rollDice);
   }, []);
+
   return (
     <main className="main-game">
       <h1>
@@ -39,16 +41,20 @@ const Dice = () => {
         </span>
       </h1>
       <div className="dice">
-        <ol className="die-list even-roll" data-roll="1" id="die-1">
-          {[...Array(6)].map((value, index) => (
-            <DiceFace faceSide={index + 1} key={index} />
-          ))}
-        </ol>
-        <ol className="die-list odd-roll" data-roll="1" id="die-2">
-          {[...Array(6)].map((value, index) => (
-            <DiceFace faceSide={index + 1} key={index} />
-          ))}
-        </ol>
+        {[...Array(Number(data.dices))].map((value, i) => (
+          <ol
+            className={
+              (i + 1) % 2 == 0 ? "die-list odd-roll" : "die-list even-roll"
+            }
+            data-roll={i + 1}
+            id={`die-${i + 1}`}
+            key={i}
+          >
+            {[...Array(6)].map((value, index) => (
+              <DiceFace faceSide={index + 1} key={index} />
+            ))}
+          </ol>
+        ))}
       </div>
       <NavBar />
     </main>
