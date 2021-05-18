@@ -15,7 +15,6 @@ const Menu = () => {
       dices: e.target.diceAmount.value,
       players: e.target.playersAmount.value,
     };
-    console.log(values);
     const json = JSON.stringify(values);
     localStorage.setItem("gameInfo", json);
     history.push("/game");
